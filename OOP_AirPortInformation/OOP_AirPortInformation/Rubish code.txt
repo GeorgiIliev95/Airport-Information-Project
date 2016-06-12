@@ -1,0 +1,374 @@
+//list <FlightInfo> FlightData::GetList()
+//{
+//	return flights;
+//}
+//bool FlightData::operator()(FlightInfo &objOne, FlightInfo &objTwo)
+//{
+//	return objOne.GetFliesFrom() < objTwo.GetFliesFrom();
+//}
+
+//vector<string> FlightData::InitializeVectorOfCities()
+//{
+//	vector<string> cities;
+//	list<FlightInfo>::iterator it;
+//	for (it = flights.begin(); it != flights.end(); it++)
+//	{
+//
+//		cities.push_back(it->GetFliesFrom());
+//		cities.push_back(it->GetFliesTo());
+//	}
+//
+//	sort(cities.begin(), cities.end());
+//	cities.erase(unique(cities.begin(), cities.end()), cities.end());
+//	return cities;
+//}
+//const AdjacencyMatrix& FlightData::InitializeGraph() 
+//{
+//	vector<string> cities = InitializeVectorOfCities();
+//	
+//	AdjacencyMatrix matrix = AdjacencyMatrix(cities.size());
+//
+//
+//	cout << endl;
+//	int src, dest; int cost;
+//	for (int i = 0; i < cities.size(); i++)
+//	{
+//		for (int j = 0; j < cities.size(); j++)
+//		{
+//			if (HasFlight(i, j, cities)>0)
+//			{
+//				matrix.AddEdge(i, j, HasFlight(i, j, cities));
+//			}
+//		}
+//	}
+//	return (matrix);
+//}
+
+//ostream& operator<<(ostream& toStream,pair<string, string> list)
+//{
+//	toStream << list.first << " " << list.second;
+//	return toStream;
+//}
+
+//void PrintList(list<string> v)
+//{
+//	list<string>::iterator it;
+//	for (it = v.begin(); it != v.end(); it++)
+//	{
+//		cout << *it << endl;
+//	}
+//}
+//void PrintVector(vector<string> v)
+//{
+//	for (int i = 0; i < v.size(); i++)
+//	{
+//		cout << v[i]<<" ";
+//	}
+//	cout << endl;
+//}
+
+
+
+//bool FlightInfo::operator<(FlightInfo &objOne) 
+//{
+//	return this->fliesFrom<objOne.fliesFrom;
+//}
+
+
+
+	//ector<string> cities = flightData.InitializeVectorOfCities();
+	//AdjacencyMatrix matrix = AdjacencyMatrix(cities.size());
+	/*cout << endl;
+	int src, dest; int cost;
+	for (int i = 0; i < cities.size(); i++)
+	{
+		for (int j = 0; j < cities.size(); j++)
+		{
+			if (flightData.HasFlight(i, j, cities)>0)
+			{
+				matrix.AddEdge(i, j, flightData.HasFlight(i, j, cities));
+			}
+		}
+	}*/
+
+
+
+
+
+//void Users::FindIfReqIsSatisfied(string id, list<FlightData> flights,AdjacencyMatrix &matrix,vector<string> cities,FlightData flightData)
+//{
+//	list<UserRequest>::iterator itUsers;
+//	list<FlightData>::iterator itFlights = flights.begin();
+//	
+//	
+//	UserRequest specifiedUser;
+//	int price = 0;
+//	for (itUsers = users.begin(); itUsers != users.end(); itUsers++)
+//	{
+//		if (itUsers->GetFlightID() == id)
+//		{
+//			specifiedUser = UserRequest(itUsers->GetFlightID(), itUsers->GetFliesFrom(), itUsers->GetFliesTo(), itUsers->GetTimeAired(), itUsers->GetTimeArrived());
+//		}
+//
+//	}
+//	
+//	if (!(flightData.HasCity(specifiedUser.GetFliesFrom()) && flightData.HasCity(specifiedUser.GetFliesTo())))
+//	{
+//		cout << "\n\n\t\tThis User Request ( " << specifiedUser.GetFliesFrom() << " to " << specifiedUser.GetFliesTo() << " ) doesn't meet actual flights!" << endl << endl << endl;
+//		return;
+//	}
+//	if ((flightData.FindFlight(specifiedUser.GetFliesFrom(), specifiedUser.GetFliesTo(),cities,matrix) >= 0))
+//	{
+//		if (flightData.SatisfiesTime(specifiedUser.GetTimeAired(), specifiedUser.GetFliesFrom(), specifiedUser.GetTimeArrived(), specifiedUser.GetFliesTo(), matrix, cities))
+//		{
+//			price = flightData.FindFlightPrice(specifiedUser.GetFliesFrom(), specifiedUser.GetFliesTo(), cities, matrix);
+//			cout << "\n\n\tPrice between " << specifiedUser.GetFliesFrom() << " and " << specifiedUser.GetFliesTo() << " is:" << price << endl << endl << endl << endl << endl << endl;
+//		}
+//		else
+//		{
+//			cout << "\t\tYour flight request don't meet any current flights!" << endl << endl<<endl;
+//		}
+//	}
+//	else
+//	{
+//		cout << "\t\tThis User Request doesn't meet actual flights!" << endl;
+//	}
+//}
+
+
+
+
+
+//AdjacencyMatrix matrix = AdjacencyMatrix(cities.size());
+	//cout << endl;
+	//int src, dest; int cost;
+	/*for (int i = 0; i < cities.size(); i++)
+	{
+		for (int j = 0; j < cities.size(); j++)
+		{
+			if (flightData.HasFlight(i, j, cities)>0)
+			{
+				matrix.AddEdge(i, j, flightData.HasFlight(i, j, cities));
+			}
+		
+
+
+
+
+
+
+
+	/*list<UserRequest>::iterator it;
+	for (it = users.begin(); it != users.end(); it++)
+	{
+		cout << it->GetFlightID() << " "
+			<< it->GetFliesFrom() << " "
+			<< it->GetFliesTo() << " "
+			<< it->GetTimeAired() << " "
+			<< it->GetTimeArrived() << endl;
+	}*/
+
+
+
+
+//void AdjacencyMatrix::PrintList(int from, int to)
+//{
+//	cout << endl;
+//	PrintDistance(from, to);
+//	for each (auto var in listStops)
+//	{
+//		cout << var << " ";
+//	}
+//	cout << endl << endl;
+//}
+//void AdjacencyMatrix::PrintDistance(int from,int to)
+//{
+//	//from [source]->all other cities;
+//	//from first found city to next till the end;
+//	//if not found back to [source];
+//	//check next city and all its paths till the end;
+//	//if not found [source]->next found city till the path find [to]
+//	listStops.push_back(from);
+//	if (from==to)
+//	{
+//		return;
+//	}
+//	for (int i = 0; i < nodes; i++)
+//	{
+//		visited[i] = false;
+//	}
+//	visited[from] = true;
+//	for (int i = 0; i < nodes; i++)
+//	{
+//		if (adjMatrix[from][i]>0 && !visited[i])
+//		{
+//			
+//			PrintDistance(i, to);
+//		}
+//	}
+//}
+
+
+
+
+// A utility function to print the constructed distance array
+//int  AdjacencyMatrix::printSolution(vector<int> dist, int n, int to, vector<string> cities)
+//{
+//	//	printf("Vertex   Distance from Source\n");
+//	//int fromTown = INT_MAX;
+//	//vector<int> listStops;
+//	//int index = 0;
+//	//int cost;
+//	for (int i = 0; i < nodes; i++)
+//	{
+//		//if (dist[i] == 0)
+//		//{
+//		////	fromTown = i;
+//		//	//cout << "Start:";
+//		//	listStops.push_back(i);
+//		//}
+//		//if (fromTown<i)
+//		//{
+//		//	//cout << "port:" << i;
+//		//	listStops.push_back(i);
+//		//}
+//
+//	//	printf("%d \t\t %d\n", i, dist[i]);
+//		if (i == to)
+//		{
+//
+//			//printf("%d \t\t %d\n", i, dist[i]);
+//			//cost = dist[i];
+//			return dist[i];
+//		}
+//		//index++;
+//	}
+//	//bool flag = false;//Flag that checks if list of stop cities is reversed or not.By default works from 0to cities.size();
+//	//for each (auto var in listStops)
+//	//{
+//	//	if (cities[var] != cities[to])
+//	//	{
+//	//		flag = true;
+//	//	}
+//	//	else
+//	//	{
+//	//		flag = false;
+//	//	}
+//	//}
+//	//cout << "City flights:\t";
+//	//if (flag == false)
+//	//{
+//	//	for (int i = 0; i < listStops.size(); i++)
+//	//	{
+//	//		cout << cities[listStops[i]] << " ";
+//	//	}
+//	//}
+//	//if (flag)
+//	//{
+//	//	listStops.empty();
+//	//	fromTown = INT_MIN;
+//	//	vector<int> listStops;
+//	//	int index = 0;
+//	//	for (int i = nodes - 1; i >= 0; i--)
+//	//	{
+//	//		if (dist[i] == 0)
+//	//		{
+//	//			//cout << i;
+//	//			fromTown = i;
+//	//			listStops.push_back(i);
+//	//		}
+//	//		if (fromTown>i && i >= to)
+//	//		{
+//	//			//cout << "port:" << i<<" ";
+//	//			listStops.push_back(i);
+//	//		}
+//	//		if (i == to)
+//	//		{
+//	//			break;
+//	//		}
+//	//	}
+//	//	for (int i = 0; i < listStops.size(); i++)
+//	//	{
+//	//		cout << cities[listStops[i]] << " ";
+//	//	}
+//	//}
+//	//cout << endl << endl;
+//	//return cost;
+//}
+
+
+
+	//int** InitializeCostMatrix()
+	//{
+	//	int** cost=new int*[nodes];
+	//	for (int i = 0; i < nodes; i++)
+	//	{
+	//		for (int j = 0; j < nodes; j++)
+	//		{
+	//			if (adjMatrix[i][j] != 0)
+	//			{
+	//				cost[i][j] = adjMatrix[i][j];
+	//				//cost[j][i] = adjMatrix[j][i];
+	//			}
+	//			else
+	//			{
+	//				cost[i][j] = INT_MAX;
+	//				//cost[j][i] = INT_MAX;
+	//			}
+	//		}
+	//	}
+	//	return cost;
+	//}
+
+
+	/*void AddEdges(multimap<pair<string, string>, float> cities, std::vector<std::string> nodes)
+	{
+		
+		multimap<pair<string, string>, float>::iterator mapIter=cities.begin();
+		for (int i = 0; i < nodes.size(); i++)
+		{
+			for (int j = 0; j < nodes.size(); j++)
+			{
+				for (int k = 0; i < nodes.size(); k++)
+				{
+
+
+					if (nodes[i] != mapIter->first.first)
+					{
+						if (make_pair(nodes[i], nodes[j]) == make_pair(mapIter->first.second, mapIter->first.first))
+						{
+							adjMatrix[i][j] = mapIter->second;
+							adjMatrix[j][i] = mapIter->second;
+						}
+					}
+					if (make_pair(nodes[j], nodes[k]) == mapIter->first)
+					{
+						adjMatrix[j][k] = mapIter->second;
+						adjMatrix[j][k] = mapIter->second;
+					}
+				}
+			}
+			mapIter++;
+			
+		}
+	}*/
+
+
+
+
+	/*void AddEdge(std::list<std::pair<std::string, std::string>> cities, std::vector<std:: string> nodes)
+	{
+		std::list<std::pair<std::string, std::string>>::iterator ListIter= cities.begin();
+		for (int i = 0; i < nodes.size(); i++)
+		{
+			for (int j = 0; j < nodes.size(); j++)
+			{
+				if ((nodes[i] == ListIter->first  && nodes[j] == ListIter->second))
+				{
+					adjMatrix[i][j] = 1;
+					adjMatrix[j][i] = 1;
+				}
+			}
+			ListIter++;
+		}
+	};*/
